@@ -1,0 +1,21 @@
+<template>
+    <div class="component-status">
+        Opportunity Celebration is ready 🎉
+    </div>
+
+    <template lwc:if={showCelebration}>
+        <div class="celebration-overlay">
+            <div class="celebration-message">
+                🎉 Congratulations! 🎉
+            </div>
+
+            <template for:each={confettiPieces} for:item="piece">
+                <div
+                    key={piece.id}
+                    class="confetti"
+                    style={piece.style}>
+                </div>
+            </template>
+        </div>
+    </template>
+</template>

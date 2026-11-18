@@ -1,0 +1,80 @@
+<template>
+    <lightning-quick-action-panel header="PDF Text Extraction">
+        <div class="slds-p-around_medium">
+
+            <div class="slds-m-bottom_medium">
+                <lightning-button
+                    label="Upload Files"
+                    icon-name="utility:upload"
+                    onclick={openFilePicker}
+                    disabled={isProcessing}>
+                </lightning-button>
+
+            </div>
+
+            <input
+                type="file"
+                accept=".pdf,application/pdf"
+                multiple
+                onchange={handleFileSelected}
+                style="display:none;" />
+
+            <template if:true={progressMessage}>
+                <p class="slds-m-top_medium slds-text-align_center">
+                    {progressMessage}
+                </p>
+            </template>
+
+            <template if:true={isProcessing}>
+                <div class="slds-m-top_medium spinner-container">
+                    <lightning-spinner
+                        alternative-text="Uploading and extracting PDF text"
+                        size="small">
+                    </lightning-spinner>
+                </div>
+            </template>
+
+            <template if:true={fileItems.length}>
+                <div class="slds-m-top_medium">
+                    <p><strong>PDF Processing Status</strong></p>
+
+                    <template for:each={fileItems} for:item="item">
+                        <p
+                            key={item.name}
+                            class="slds-p-vertical_x-small">
+                            {item.name} — {item.status}
+                        </p>
+                    </template>
+                </div>
+            </template>
+
+            <template if:true={vfUrl}>
+                <iframe
+                    src={vfUrl}
+                    title="PDF text extraction"
+                    width="1"
+                    height="1"
+                    style="position:absolute; left:-9999px; border:0;"
+                    tabindex="-1">
+                </iframe>
+            </template>  
+              <div class="footer-buttons slds-m-top_large">
+
+                <lightning-button
+                    label="Cancel"
+                    variant="neutral"
+                    onclick={handleCancel}
+                    disabled={isProcessing}>
+                </lightning-button>
+
+                <lightning-button
+                    label="Save"
+                    variant="brand"
+                    onclick={handleUploadAll}
+                    disabled={isProcessing}>
+                </lightning-button>
+
+             </div>
+        </div>
+    </lightning-quick-action-panel>
+</template>

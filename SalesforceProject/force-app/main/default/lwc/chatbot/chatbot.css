@@ -1,0 +1,119 @@
+.main-container {
+    display: flex;
+    height: 10vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:  700px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+.whatsapp-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.top-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+.whatsapp-icon{
+    width: 30px;
+    height: 30px;
+}
+
+
+/* Chatbot */
+.chatbot-container {
+    flex: 1;
+    width: 450px;
+    height: 650px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: #efefef;
+}
+
+/* Header */
+.chatbot-header {
+    background: #9cafad;
+    color: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+
+
+/* Message Area */
+.chatbot-message {
+    height: 500px;
+    background: #e9f1f212;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Input Area */
+.chatbot-input {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.chatbot-inbound {
+    flex: 1;
+    padding: 8px;
+}
+
+
+
+/* User Message */
+.left-message {
+    background: rgba(238, 234, 234, 0.951);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    width: fit-content;
+    max-width: 70%; 
+	align-self: flex-start;/*LEFT*/
+
+}
+
+/* Bot Message */
+.right-message {
+    background: #dcf8c6;
+    padding: 10px;
+    margin: 10px 10px 10px auto;
+    border-radius: 8px;
+    width: fit-content;
+    max-width: 70%;
+	align-self: flex-end;/*RIGHT*/
+} 
+.messagetime{
+	font-size: 11px;
+	color: rgba(49, 24, 190, 0.735);
+	text-align: right;
+	margin-top: 5px;
+} 
+.messagetime{
+    font-size: 11px;
+    color: gray;
+    margin-bottom: 10px;
+} 
+.modal-backdrop{
+    position :fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background: rha(0,0,0,0.4);
+    z-index: 999;
+}

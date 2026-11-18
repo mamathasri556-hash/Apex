@@ -1,0 +1,16 @@
+<template> 
+   <lightning-combobox
+        name="healthIssue"
+        label="Health"
+        value={selectedHealth}
+        options={healthOptions}
+        onchange={handleHealthChange}> 
+   </lightning-combobox>
+   <lightning-combobox
+        name="healthIssue"
+        label="Health Issue"
+        value={selectedHealthIssue}
+        options={healthIssueOptions}
+        onchange={handleHealthIssueChange}>
+   </lightning-combobox>
+</template>
